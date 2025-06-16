@@ -1,6 +1,6 @@
-import { Pool } from '@neondatabase/serverless';
+const { Pool } = require('@neondatabase/serverless');
 
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   // Hanya izinkan metode POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
