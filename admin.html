@@ -20,24 +20,37 @@ document.getElementById('event-form').addEventListener('submit', async (e) => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    try {
-        const response = await fetch('/.netlify/functions/addEvent', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
+    // ...
+try {
+    const response = await fetch('/.netlify/functions/addEvent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
 
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.error || 'Gagal menyimpan event.');
+    // Cek jika respons TIDAK berhasil (misal: status 401, 500, dll)
+    if (!response.ok) {
+        let errorMessage;
+        const contentType = response.headers.get('content-type');
+
+        // Cek apakah responsnya JSON atau teks biasa
+        if (contentType && contentType.includes('application/json')) {
+            const errorData = await response.json();
+            errorMessage = errorData.error || 'Unknown JSON error';
+        } else {
+            // Jika bukan JSON (seperti kasus "Unauthorized"), baca sebagai teks
+            errorMessage = await response.text(); 
         }
-
-        const result = await response.json();
-        statusMessage.textContent = 'Event berhasil disimpan! ID: ' + result.id;
-        e.target.reset(); // Kosongkan form
-
-    } catch (error) {
-        statusMessage.textContent = 'Error: ' + error.message;
+        throw new Error(`Server error (${response.status}): ${errorMessage}`);
     }
+
+    // Jika kode sampai di sini, berarti respons berhasil dan aman diparsing sebagai JSON
+    const result = await response.json();
+    statusMessage.textContent = 'Event berhasil disimpan! ID: ' + result.id;
+    e.target.reset();
+
+} catch (error) {
+    statusMessage.textContent = 'Error: ' + error.message;
+}
 });
 </script>
