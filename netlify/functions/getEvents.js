@@ -1,6 +1,6 @@
-import { Pool } from '@neondatabase/serverless';
+const { Pool } = require('@neondatabase/serverless');
 
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   const pool = new Pool({ connectionString: process.env.NETLIFY_DATABASE_URL });
   
   try {
