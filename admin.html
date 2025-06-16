@@ -1,0 +1,43 @@
+<form id="event-form" class="space-y-6">
+    <div>
+        <label for="title">Judul Event</label>
+        <input type="text" id="title" name="title" required class="text-black">
+    </div>
+    <div>
+        <label for="secret_password">Password Admin</label>
+        <input type="password" id="secret_password" name="secret_password" required class="text-black">
+    </div>
+    <button type="submit">Simpan Event</button>
+</form>
+<p id="status-message"></p>
+
+<script>
+document.getElementById('event-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const statusMessage = document.getElementById('status-message');
+    statusMessage.textContent = 'Menyimpan...';
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch('/.netlify/functions/addEvent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Gagal menyimpan event.');
+        }
+
+        const result = await response.json();
+        statusMessage.textContent = 'Event berhasil disimpan! ID: ' + result.id;
+        e.target.reset(); // Kosongkan form
+
+    } catch (error) {
+        statusMessage.textContent = 'Error: ' + error.message;
+    }
+});
+</script>

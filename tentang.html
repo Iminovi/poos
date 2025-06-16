@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Komunitas Poos69</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: { 'fade-in': 'fadeIn 0.8s ease-in-out', 'slide-up': 'slideUp 0.6s ease-out' },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        slideUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white">
+    <header class="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Poos69</a>
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html" class="text-white/90 hover:text-purple-400 transition-colors duration-300 relative group">Home<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="tentang.html" class="text-purple-400 font-semibold relative group">Tentang Kami<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-purple-400"></span></a></li>
+                <li><a href="anggota.html" class="text-white/90 hover:text-purple-400 transition-colors duration-300 relative group">Anggota<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="forum.html" class="text-white/90 hover:text-purple-400 transition-colors duration-300 relative group">Forum<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span></a></li>
+               
+                <li><a href="event.html" class="bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">Gabung!</a></li>
+            </ul>
+             <button class="md:hidden text-white">MENU</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-16 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">Tentang Komunitas Poos69(perkumpulan orang orang senang 69)</h1>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto">Mengenal lebih dekat siapa kami, apa yang kami lakukan, dan mengapa kami ada.</p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl mb-12 animate-slide-up">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Visi & Misi Kami</h2>
+                        <p class="text-white/80 mb-4">Menjadi komunitas terdepan yang solid, inovatif, dan menjadi rumah bagi para penggiat teknologi di Tegal untuk saling terhubung, belajar, dan tumbuh bersama.</p>
+                        <p class="text-white/80">Misi kami adalah menyelenggarakan kegiatan berkualitas, menciptakan ruang diskusi yang aman dan terbuka, serta membangun jaringan yang kuat antar anggota.</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-64 h-64 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full flex items-center justify-center">
+                            <svg class="w-32 h-32 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.204 13.63A8.96 8.96 0 012 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9c-1.63 0-3.15-.44-4.5-.18M12 12a3 3 0 100-6 3 3 0 000 6zM19 12a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-16 animate-slide-up delay-200">
+                 <h2 class="text-4xl font-bold mb-8">Nilai-Nilai Kami</h2>
+                 <div class="grid md:grid-cols-3 gap-8">
+                     <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/30 transition-all duration-300 transform hover:-translate-y-2">
+                         <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto"><svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path></svg></div>
+                         <h3 class="text-xl font-semibold mb-2 text-white">Kolaborasi</h3>
+                         <p class="text-white/70">Kami percaya kekuatan terbesar datang dari diri sendiri. kerjasama, Saling bantu, saling dukung.</p>
+                     </div>
+                     <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-pink-500/30 transition-all duration-300 transform hover:-translate-y-2">
+                         <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto"><svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.36 4.36a9.95 9.95 0 0114.14 0 9.95 9.95 0 010 14.14 9.95 9.95 0 01-14.14 0 9.95 9.95 0 010-14.14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12l-4.24 4.24M16.24 7.76L12 12"></path></svg></div>
+                         <h3 class="text-xl font-semibold mb-2 text-white">Respek</h3>
+                         <p class="text-white/70">Menghargai setiap pendapat, latar belakang, dan ide tanpa terkecuali.</p>
+                     </div>
+                      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-2">
+                         <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto"><svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l.707-.707m2.828 9.9a5 5 0 017.072 0l-.707.707M6.343 17.657l-.707-.707a5 5 0 010-7.072l.707-.707"></path></svg></div>
+                         <h3 class="text-xl font-semibold mb-2 text-white">Inovasi</h3>
+                         <p class="text-white/70">Selalu mencari cara baru, ide segar, dan tidak takut untuk mencoba hal yang berbeda.</p>
+                     </div>
+                 </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-white/60">&copy; 2025 Komunitas Poos69. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

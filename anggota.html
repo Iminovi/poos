@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anggota - Komunitas Poos69</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: { 'fade-in': 'fadeIn 0.8s ease-in-out', 'slide-up': 'slideUp 0.6s ease-out' },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        slideUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white">
+    <header class="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Poos69</a>
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html" class="text-white/90 hover:text-purple-400 transition-colors duration-300 relative group">Home<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="tentang.html" class="text-white/90 hover:text-purple-400 transition-colors duration-300 relative group">Tentang Kami<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="anggota.html" class="text-purple-400 font-semibold relative group">Anggota<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-purple-400"></span></a></li>
+                <li><a href="forum.html" class="text-white/90 hover:text-purple-400 transition-colors duration-300 relative group">Forum<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span></a></li>
+                
+                <li><a href="event.html" class="bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">Event!</a></li>
+            </ul>
+            <button class="md:hidden text-white">MENU</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-16 animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">Anggota Komunitas Kami</h1>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto">Kenali orang-orang hebat dan inspiratif di balik komunitas Poos69.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:border-purple-500/30 transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
+                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar Anggota" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
+                    <h3 class="text-xl font-semibold text-white">kaeftrin sandy</h3>
+                    <p class="text-purple-300/80 mb-3">Founder & Lead</p>
+                    <p class="text-white/70 text-sm">"Mari kita bangun komunitas perkumpulan orang orng senang 69 ini!!!."</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 hover:border-purple-500/30 transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style="animation-delay: 100ms;">
+                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026705d" alt="Avatar Anggota" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
+                    <h3 class="text-xl font-semibold text-white">Nadia Clara</h3>
+                    <p class="text-purple-300/80 mb-3">Cofounder</p>
+                    <p class="text-white/70 text-sm">"Saya Adalah Orang Yang Bergerak Di Balik Bayangan"</p>
+                </div>
+
+                
+                
+                </div>
+        </div>
+    </main>
+
+    <footer class="bg-black/30 backdrop-blur-sm border-t border-white/10 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-white/60">&copy; 2025 Komunitas Poos69. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

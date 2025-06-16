@@ -1,0 +1,50 @@
+<div id="event-list" class="space-y-8">
+    <p>Memuat event...</p>
+</div>
+
+<script>
+async function loadEvents() {
+    const eventListContainer = document.getElementById('event-list');
+    try {
+        const response = await fetch('/.netlify/functions/getEvents');
+        const events = await response.json();
+
+        if (!response.ok) throw new Error('Gagal memuat data');
+
+        // Kosongkan kontainer
+        eventListContainer.innerHTML = '';
+        
+        if (events.length === 0) {
+            eventListContainer.innerHTML = '<p>Belum ada event yang dijadwalkan.</p>';
+            return;
+        }
+
+        events.forEach(event => {
+            const eventDate = new Date(event.event_date);
+            const day = eventDate.getDate();
+            const month = eventDate.toLocaleString('id-ID', { month: 'short' }).toUpperCase();
+            
+            // Buat HTML untuk setiap kartu event
+            const eventCardHTML = `
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row items-center gap-6">
+                <div class="flex-shrink-0 text-center bg-purple-500/20 p-4 rounded-xl">
+                    <p class="text-5xl font-bold text-white">${day}</p>
+                    <p class="text-lg text-purple-300">${month}</p>
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <h3 class="text-2xl font-semibold text-white mb-2">${event.title}</h3>
+                    <p class="text-white/70 mb-3">${event.location || 'Lokasi akan diumumkan'}</p>
+                    <p class="text-white/80">${event.description}</p>
+                </div>
+            </div>`;
+            eventListContainer.innerHTML += eventCardHTML;
+        });
+
+    } catch (error) {
+        eventListContainer.innerHTML = '<p class="text-red-400">Gagal memuat event. Coba lagi nanti.</p>';
+    }
+}
+
+// Panggil fungsi saat halaman dimuat
+document.addEventListener('DOMContentLoaded', loadEvents);
+</script>

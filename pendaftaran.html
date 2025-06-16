@@ -220,14 +220,19 @@
 
     <script>
         // Form submission handling
-        document.querySelector('form[name="pendaftaran"]').addEventListener('submit', function(e) {
-            // Let Netlify handle the form submission
-            // Show success message after a brief delay
-            setTimeout(function() {
-                document.getElementById('successMessage').classList.remove('hidden');
-                document.querySelector('form[name="pendaftaran"]').style.display = 'none';
-            }, 1000);
-        });
+document.querySelector('form[name="pendaftaran"]').addEventListener('submit', function(e) {
+    // TAMBAHKAN BARIS INI untuk mencegah browser me-refresh halaman
+    e.preventDefault();
+
+    // Kode Anda selanjutnya akan berjalan seperti biasa
+    // Netlify tetap akan menangkap data form di latar belakang
+    
+    // Show success message after a brief delay
+    setTimeout(function() {
+        document.getElementById('successMessage').classList.remove('hidden');
+        document.querySelector('form[name="pendaftaran"]').style.display = 'none';
+    }, 500); // Anda bisa percepat delay sedikit jika mau
+});
 
         // Add floating animation to form fields on focus
         document.querySelectorAll('input, textarea').forEach(field => {
