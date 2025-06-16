@@ -1,7 +1,7 @@
 import { Pool } from '@neondatabase/serverless';
 
 export const handler = async (event, context) => {
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+  const pool = new Pool({ connectionString: process.env.NETLIFY_DATABASE_URL });
   
   try {
     const { rows } = await pool.query('SELECT * FROM events ORDER BY event_date DESC');
