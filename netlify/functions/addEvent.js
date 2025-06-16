@@ -14,7 +14,7 @@ export const handler = async (event, context) => {
     return { statusCode: 401, body: 'Unauthorized' };
   }
 
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+  const pool = new Pool({ connectionString: process.env.NETLIFY_DATABASE_URL });
   
   try {
     const query = 'INSERT INTO events(title, event_date, location, description) VALUES($1, $2, $3, $4) RETURNING *';
