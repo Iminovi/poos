@@ -27,7 +27,14 @@ export const handler = async (event, context) => {
       statusCode: 201,
       body: JSON.stringify(rows[0]),
     };
-  } catch (error) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'Gagal menambahkan event.' }) };
-  }
-};
+  //...
+} catch (error) {
+  // BARIS INI AKAN MENCATAT DETAIL ERROR YANG SEBENARNYA KE LOG NETLIFY
+  console.error('Database query error:', error); 
+  
+  // Kita tetap mengirim pesan generik ke pengguna demi keamanan
+  return { 
+    statusCode: 500, 
+    body: JSON.stringify({ error: 'Gagal menambahkan event.' }) 
+  };
+}
